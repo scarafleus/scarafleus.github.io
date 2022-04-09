@@ -7,60 +7,109 @@ Hannes Richter, started 9. April 2022
 -->
 
 <style>
-h1 {font-family:Monaco; color:white; text-align: center}
-h2 {font-family:Monaco; color:white}
-h3 {font-family:Monaco; color:white}
+h1 {font-family:Futura; color:white; text-align: center}
+h2 {font-family:Futura; font-size: 1.3em; color:white}
+h3 {font-family:Futura; color:white}
 p {font-family:Monaco; color:white}
 ol {font-family:Monaco; color:white}
 ul {font-family:Monaco; color:white}
 a {font-family:Monaco; color:#0062ff; text-decoration: none}
 table {font-family:Monaco; color:white}
 img {width: 90%; height: auto}
-hr {border: 1px dashed white}
+hr {border: 1px solid white; margin-bottom:0; margin-top:0}
 
-.borderexample {border-style:solid; border-color:white}
+.imageborder {border-style:solid; border-color:white}
+.seperator {border: 0.5px solid white; margin-bottom:2em; margin-top:2em}
+.spacer {justify-content:space-between; display:flex}
 </style>
 
 <head>
   <title>Quantum Butterfly</title>
 </head>
 
-<body bgcolor=”#000000">
+<!-- This is where the actual website starts -->
 
-<h1>The Quantum Butterfly</h1>
+<body bgcolor="#000000">
 
-<hr style="margin-bottom:0">
+<!-- Title -->
+
+<h1>The <i>Quantum</i> Butterfly</h1>
+
+<!-- Navigation bar -->
+
+<hr>
 
 <div style="justify-content:space-around; display:flex">
-  <p>Home</p>
-  <p>Blog</p>
-  <p>Contact</p>
+  <p><b>Home</b></p>
+  <p><b>Blog</b></p>
+  <p><b>Contact</b></p>
 </div>
 
-<hr style="margin-top:0; margin-bottom:2.5em">
+<hr>
 
-<a href="http://codepen.io/anon/pen/xwjLbZ">
-  Come look at what this shows
-</a>
+<!-- Content -->
 
-<p>
-  This is a paragraph<br>
-  This is the second line.
-</p>
+<div style="margin:2em">
 
-<ul>
-  <li>This is an item in a non-enumerated list (bullet list)</li>
-  <li>This is another item</li>
-</ul>
+  <div class="spacer">
+    <h2>About this website</h2>
+    <p>9. April 2022</p>
+  </div>
 
-<ol>
-  <li>This is an item in an enumerated list</li>
-  <li>This is another item</li>
-</ol>
+  <p>
+    This website is not meant to sell anything. It was created by me as an outlet, diary and place to share interesting or obscure things that I encouter throughout my stay here on earth. It is also an exercise in design and discipline as well as sorting and organizing my thoughts. As of writing this, I'm not sure if this website will ever be released to the public or even which language it would be in.<br>
+    Nevertheless, learning a bit of HTML for this and forming the design was a fun start to this project. I expect that I will make small and big changes to every aspect of this website as long as I maintain it.<br>
+    The name <b>The Quantum Butterfly</b> originates from the quantum weather butterfly from the Discworld novels by Terry Pratchett. The idea goes back further than that though, to a Gedankenexperiment by Edward Lorenz. In essence, some systems are highly sensitive to small changes in their initial conditions. Lorenz noted that a butterfly flapping it's wings at the exact right moment and location could dramatically affect the weather elsewhere. There are other such delicate systems, like a snow-topped mountain which is subject to sudden avalanches, or even History. Think about the consequenzes of Albert Einstein dying of sudden infant death at 3 month age or of Adolf Hitler not surviving every single one of the over 40 assasination attempts directed at him. But I digress - did you know that Lorenz initally used a seagull for this metaphor but was convinced to use a butterfly to make it more poetic by the way?<br>
+    Some words about me: I am 21 years old at the moment and have just finished my bachelors degree in mathematics. My primary interests are science, art, music and sports. I was born on the German East-Coast and live there to this date. I will try not to make this website about me though. Rather it should be about all the querky and fascinating facets of life, especially those that are not commonly shown in more mainstream media. I don't expect everyone to like everything that I upload. You should see this site more as a table full of items at a flea market. If you don't like anything, just pass along but if something catches your eye... step closer and I will tell you all about it.
+  </p>
 
-<center>
-  <img class="borderexample" src="SchoolOfAthens.jpg">
-</center>
+  <hr class="seperator">
+
+  <div class="spacer">
+    <h2>Example HTML commands</h2>
+    <p>9. April 2022</p>
+  </div>
+
+  <a href="http://codepen.io/anon/pen/xwjLbZ">
+    Come look at what this shows
+  </a>
+
+  <p>
+    This is a paragraph.<br>
+    This is the second line.
+  </p>
+
+  <ul>
+    <li>This is an item in a non-enumerated list (bullet list)</li>
+    <li>This is another item</li>
+  </ul>
+
+  <ol>
+    <li>This is an item in an enumerated list</li>
+    <li>This is another item</li>
+  </ol>
+
+  <hr class="seperator">
+
+  <div class="spacer">
+    <h2>The school of Athens by Raphael</h2>
+    <p>9. April 2022</p>
+  </div>
+
+  <center>
+    <img class="imageborder" alt="The school of Athens" src="SchoolOfAthens.jpg">
+  </center>
+
+</div>
+
+<hr>
+
+<div style="margin-left:2em; margin-right:2em">
+  <div class="spacer">
+    <p>Created by Hannes Richter</p>
+    <p>9. April 2022</p>
+  </div>
+</div>
 
 </body>
 
