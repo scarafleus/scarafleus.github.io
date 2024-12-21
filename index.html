@@ -130,7 +130,11 @@ code {font-family:Monaco; color: #f8f8f2}
     Like most mathematics students I have also spent a considerable amount of time on trying to solve the Collatz-conjecture. It is a fascinating problem and one I
     would love to see the solution of within my lifetime. It defines a simple function mapping a positive integer to another positive integer. It goes like this:
     \[
-      f(n) = \frac{n}{2}
+      f(n) =
+      begin{cases}
+        \frac{n}{2}\ $n = 0 \text{mod}(2)
+        3n+1 $n = 1 \text{mod}(2)
+      \end{cases}
     \]
   </p>
 
