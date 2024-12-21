@@ -41,7 +41,8 @@ hr {border: 1px solid white; margin-bottom:0; margin-top:0}
 
 <div style="justify-content:space-around; display:flex">
   <p><b>Home</b></p>
-  <p><b>Blog</b></p>
+  <p><b>Projects</b></p>
+  <p><b>CV</b></p>
   <p><b>Contact</b></p>
 </div>
 
@@ -62,6 +63,31 @@ hr {border: 1px solid white; margin-bottom:0; margin-top:0}
     The name <b>The Quantum Butterfly</b> originates from the quantum weather butterfly from the Discworld novels by Terry Pratchett. The idea goes back further than that though, to a Gedankenexperiment by Edward Lorenz. In essence, some systems are highly sensitive to small changes in their initial conditions. Lorenz noted that a butterfly flapping it's wings at the exact right moment and location could dramatically affect the weather elsewhere. There are other such delicate systems, like a snow-topped mountain which is subject to sudden avalanches, or even History. Think about the consequenzes of Albert Einstein dying of sudden infant death at 3 month age or of Adolf Hitler not surviving every single one of the over 40 assasination attempts directed at him. But I digress - did you know that Lorenz initally used a seagull for this metaphor but was convinced to use a butterfly to make it more poetic by the way?<br>
     Some words about me: I am 21 years old at the moment and have just finished my bachelors degree in mathematics. My primary interests are science, art, music and sports. I was born on the German East-Coast and live there to this date. I will try not to make this website about me though. Rather it should be about all the querky and fascinating facets of life, especially those that are not commonly shown in more mainstream media. I don't expect everyone to like everything that I upload. You should see this site more as a table full of items at a flea market. If you don't like anything, just pass along but if something catches your eye... step closer and I will tell you all about it.
   </p>
+
+  <hr class="seperator">
+
+  <div class="spacer">
+    <h2>ASCII art</h2>
+    <p>21. December 2024</p>
+  </div>
+
+  <center>
+    <img class="imageborder" alt="A quantum butterfly" src="ascii_butterfly.jpg">
+  </center>
+  <p>
+    I've dug up my external hard-drive and I want to display some of my old projects. Most of these, like this one, were made in the processing java environment.
+    This first one is a simple tool that converts images into colored ASCII-art. The major design choice here was the character-palette. For this particular image I used
+  </p>
+  <p text-align: center>
+  {' ', '.', ',', ':', ';', '+', '*', '=', 'c', 'd', 'ä', '8', 'B', '&', '#', '@'}
+  </p>
+  <p>
+    Other steps in the image processing like transforming the pixel-brightness value can be omitted by simply adjusting this palette. It is possible and perhaps even
+    a good idea to have spaces or multiple entries of the same character in your palette. The only other thing to note here, is that you probably want to adjust the color brightness
+    since the brightness is already beeing regulated by the character we are using. I have simply set the brightness of each color to the maximum by multiplying the rgb-values
+    such that the biggest one became 255.
+  </p>
+
 
   <!-- <hr class="seperator">
 
