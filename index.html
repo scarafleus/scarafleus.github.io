@@ -5,166 +5,149 @@ Hannes Richter, started 9. April 2022
 
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Import style sheet -->
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Import a script to display LaTeX code. -->
-  <script type="text/javascript" id="MathJax-script" async
+    <!-- Import style sheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Import a script to display LaTeX code. -->
+    <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
-  
-  <head>
-    <title>Quantum Butterfly</title>
-  </head>
-
-  <body style="background-color:black;">
+    </script>
     
-    <!-- Header -->
-    <iframe src="header.html" width="100%" height="100" frameborder="0" scrolling="no"></iframe>
-    
-    <!-- Content -->
-    <div style="margin:2em">
-    
-      <div class="spacer">
-        <h2>About this website</h2>
-        <p>9. April 2022</p>
-      </div>
-    
-      <p>
-        This website is not meant to sell anything. It was created by me as an outlet, diary and place to share interesting or obscure things that I encouter throughout my stay here on earth. It is also an exercise in design and discipline as well as sorting and organizing my thoughts. As of writing this, I'm not sure if this website will ever be released to the public or even which language it would be in.<br>
-        Nevertheless, learning a bit of HTML for this and forming the design was a fun start to this project. I expect that I will make small and big changes to every aspect of this website as long as I maintain it.<br>
-        The name <b>The Quantum Butterfly</b> originates from the quantum weather butterfly from the Discworld novels by Terry Pratchett. The idea goes back further than that though, to a Gedankenexperiment by Edward Lorenz. In essence, some systems are highly sensitive to small changes in their initial conditions. Lorenz noted that a butterfly flapping it's wings at the exact right moment and location could dramatically affect the weather elsewhere. There are other such delicate systems, like a snow-topped mountain which is subject to sudden avalanches, or even History. Think about the consequenzes of Albert Einstein dying of sudden infant death at 3 month age or of Adolf Hitler not surviving every single one of the over 40 assasination attempts directed at him. But I digress - did you know that Lorenz initally used a seagull for this metaphor but was convinced to use a butterfly to make it more poetic by the way?<br>
-        Some words about me: I am 21 years old at the moment and have just finished my bachelors degree in mathematics. My primary interests are science, art, music and sports. I was born on the German East-Coast and live there to this date. I will try not to make this website about me though. Rather it should be about all the querky and fascinating facets of life, especially those that are not commonly shown in more mainstream media. I don't expect everyone to like everything that I upload. You should see this site more as a table full of items at a flea market. If you don't like anything, just pass along but if something catches your eye... step closer and I will tell you all about it.
-      </p>
-    
-      <!--
-      Possible Topics:
-      * Pascals Triangle
-      * Genetic Algorithm
-      -->
-    
-      <hr class="seperator">
-    
-      <div class="spacer">
-        <h2>ASCII art</h2>
-        <p>21. December 2024</p>
-      </div>
-    
-      <div style="text-align: center;">
-        <img
-          class="imageborder"
-          alt="A quantum butterfly"
-          src="ascii_butterfly.jpg"
-          style="max-width: 800px; max-height: 800px;">
-      </div>
-      <p>
-        I've dug up my external hard-drive and I want to display some of my old projects. Most of these, like this one, were made in the processing java environment.
-        This first one is a simple tool that converts images into colored ASCII-art. The major design choice here was the character-palette. For this particular image I used
-      </p>
-      <div style="text-align: center;">
-        <pre><code>&#123; ' ', '.', ',', ':', ';', '+', '*', '=', 'c', 'd', 'ä', '8', 'B', '&', '#', '@' &#125;</code></pre>
-      </div>
-      <p>
-        Other steps in the image processing like transforming the pixel-brightness value can be omitted by simply adjusting this palette. It is possible and perhaps even
-        a good idea to have spaces or multiple entries of the same character in your palette. The only other thing to note here, is that you probably want to adjust the color brightness
-        since the brightness is already beeing regulated by the character we are using. I have simply set the brightness of each color to the maximum by multiplying the rgb-values
-        such that the biggest one became 255.
-      </p>
-    
-      <hr class="seperator">
-    
-      <div class="spacer">
-        <h2>The Collatz Conjecture</h2>
-        <p>21. December 2024</p>
-      </div>
-    
-      <div style="text-align: center;">
-        <img
-          class="imageborder"
-          alt="A collatz-sequence graph"
-          src="collatz_graph.jpg"
-          style="max-width: 1680px; max-height: 1050px;">
-      </div>
-      <p>
-        Like most mathematics students I have also spent a considerable amount of time on trying to solve the Collatz-conjecture. It is a fascinating problem and one I
-        would love to see the solution of within my lifetime. It defines a simple function mapping a positive integer to another positive integer. It goes like this:
-        \[
-          f(n) =
-          \begin{cases}
-            \frac{n}{2}\ &n \equiv 0 \quad \text{mod}(2) \\
-            3n+1 &n \equiv 1 \quad \text{mod}(2)
-          \end{cases}
-        \]
-        Applying this function repeatedly, starting with the number \(1\) we receive \(1 \rightarrow 4 \rightarrow 2 \rightarrow 1 \rightarrow 4 \rightarrow \; ...\).
-        The conjecture is, that for any positive integer applying \(f\) repeatedly will eventually produce the number \(1\) and thus end up in this infinite cycle.
-        Here's a few things I learned during my time with this problem:
-      </p>
-      <ol>
-        <li>There is a close relationship between this problem and the so-called ruler function. In the graph it is drawn in red.</li>
-        <li>Expanding on this, it's worthwhile to not just consider the sequence of numbers, but also the divisibility by 2 when you add one to the number (drawn
-        in blue). Using this it's for example possible to proof the conjecture for the modified function with \(f(n) = 3n\) if \(n\) is odd.</li>
-        <li>Trying to solve an impossible problem is a great way to stumble upon all sorts of methods for solving other problems.</li>
-      </ol>
-    
-      <h3>References</h3>
-    
-      <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz Conjecture Wikipedia Article</a></li>
-      </ul>
-    
-      <hr class="seperator">
-    
-      <div class="spacer">
-        <h2>Flocking and Vectorfields</h2>
-        <p>21. December 2024</p>
-      </div>
-    
-      <div style="text-align: center;">
-        <img
-          class="imageborder"
-          alt="A lot of different forces are interacting to produce this diverse swarming behavior"
-          src="flocking.jpg"
-          style="max-width: 800px; max-height: 800px;">
-      </div>
-      <p>
-        This is a simple program illustrating flocking mechanisms and the effect of a vectorfield that changes over time. In the past I have done a lot of experimenting
-        with particle systems and vector fields and how particles interact with one another with different forces. This is largely due to Daniel Shiffmans excellent
-        <i>The Coding Train</i> (formerly The Coding Rainbow) Youtube-Channel in which he teaches programming in a very applied and diverse way by solving challenges.
-        Through this series I initially learned programming and can recommend it to everyone, even now, as a continuous source of interesting areas of programming.
-      </p>
-      <p>
-        In this flocking simulation 4 forces are at work
-      </p>
-      <ol>
-        <li>The vectorfield (indicated in grey) applies a force on each particle based on their absolute positions. This force changes continuously in time
-          and space.</li>
-        <li>The particles attract each other based on the inverse of their distance.</li>
-        <li>The particles repell each other based on the inverse of their distance squared.</li>
-        <li>The particles align their direction of movement relative to their neighbours.</li>
-      </ol>
-      <p>
-        With each of these fudamental forces comes at least one constant, used to scale their effect. This makes getting realistic flocking behavior, as seen in flocks
-        of birds for example, pretty difficult. As a rule of thumb I found that the attraction constant should be larger than the repelling constant. It is very
-        important that the repelling force falls of quicker than the attracting force since we want particles that are far apart to move towards each other to form
-        groups. Without a repelling force all particles would just bundle up into a single point and it would be uninteresting. This is almost exactly the same as the
-        balance of electrical and gravitational forces in particles.
-      </p>
-    
-      <h3>References</h3>
-    
-      <ul>
-        <li><a href="https://thecodingtrain.com">The Coding Train</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Flocking">Flocking Wikipedia Article</a></li>
-      </ul>
-    
-    </div>
-    
-    <hr>
-    
-    <div style="margin-left:2em; margin-right:2em">
-      <div class="spacer">
-        <p>Created by Hannes Richter</p>
-        <p>9. April 2022</p>
-      </div>
-    </div>
-  </body>
+    <body style="background-color:black;">
+        <!-- Header -->
+        <iframe src="header.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+        
+        <!-- Content -->
+        <div style="margin:2em">
+            <div class="spacer">
+                <h2>About this website</h2>
+                <p>9. April 2022</p>
+            </div>
+            <p>
+                This website is not meant to sell anything. It was created by me as an outlet, diary and place to share interesting or obscure things that I encouter throughout my stay here on earth. It is also an exercise in design and discipline as well as sorting and organizing my thoughts. As of writing this, I'm not sure if this website will ever be released to the public or even which language it would be in.<br>
+                Nevertheless, learning a bit of HTML for this and forming the design was a fun start to this project. I expect that I will make small and big changes to every aspect of this website as long as I maintain it.<br>
+                The name <b>The Quantum Butterfly</b> originates from the quantum weather butterfly from the Discworld novels by Terry Pratchett. The idea goes back further than that though, to a Gedankenexperiment by Edward Lorenz. In essence, some systems are highly sensitive to small changes in their initial conditions. Lorenz noted that a butterfly flapping it's wings at the exact right moment and location could dramatically affect the weather elsewhere. There are other such delicate systems, like a snow-topped mountain which is subject to sudden avalanches, or even History. Think about the consequenzes of Albert Einstein dying of sudden infant death at 3 month age or of Adolf Hitler not surviving every single one of the over 40 assasination attempts directed at him. But I digress - did you know that Lorenz initally used a seagull for this metaphor but was convinced to use a butterfly to make it more poetic by the way?<br>
+                Some words about me: I am 21 years old at the moment and have just finished my bachelors degree in mathematics. My primary interests are science, art, music and sports. I was born on the German East-Coast and live there to this date. I will try not to make this website about me though. Rather it should be about all the querky and fascinating facets of life, especially those that are not commonly shown in more mainstream media. I don't expect everyone to like everything that I upload. You should see this site more as a table full of items at a flea market. If you don't like anything, just pass along but if something catches your eye... step closer and I will tell you all about it.
+            </p>
+            <hr class="seperator">
+            
+            <!--
+            Possible Topics:
+            * Pascals Triangle
+            * Genetic Algorithm
+            -->
+            
+            <div class="spacer">
+                <h2>ASCII art</h2>
+                <p>21. December 2024</p>
+            </div>
+            <div style="text-align: center;">
+                <img
+                class="imageborder"
+                alt="A quantum butterfly"
+                src="ascii_butterfly.jpg"
+                style="max-width: 800px; max-height: 800px;">
+            </div>
+            <p>
+                I've dug up my external hard-drive and I want to display some of my old projects. Most of these, like this one, were made in the processing java environment.
+                This first one is a simple tool that converts images into colored ASCII-art. The major design choice here was the character-palette. For this particular image I used
+            </p>
+            <div style="text-align: center;">
+                <pre><code>&#123; ' ', '.', ',', ':', ';', '+', '*', '=', 'c', 'd', 'ä', '8', 'B', '&', '#', '@' &#125;</code></pre>
+            </div>
+            <p>
+                Other steps in the image processing like transforming the pixel-brightness value can be omitted by simply adjusting this palette. It is possible and perhaps even
+                a good idea to have spaces or multiple entries of the same character in your palette. The only other thing to note here, is that you probably want to adjust the color brightness
+                since the brightness is already beeing regulated by the character we are using. I have simply set the brightness of each color to the maximum by multiplying the rgb-values
+                such that the biggest one became 255.
+            </p>
+            <hr class="seperator">
+            
+            <div class="spacer">
+                <h2>The Collatz Conjecture</h2>
+                <p>21. December 2024</p>
+            </div>
+            <div style="text-align: center;">
+            <img
+                class="imageborder"
+                alt="A collatz-sequence graph"
+                src="collatz_graph.jpg"
+                style="max-width: 1680px; max-height: 1050px;">
+            </div>
+            <p>
+                Like most mathematics students I have also spent a considerable amount of time on trying to solve the Collatz-conjecture. It is a fascinating problem and one I
+                would love to see the solution of within my lifetime. It defines a simple function mapping a positive integer to another positive integer. It goes like this:
+                \[
+                f(n) =
+                \begin{cases}
+                \frac{n}{2}\ &n \equiv 0 \quad \text{mod}(2) \\
+                3n+1 &n \equiv 1 \quad \text{mod}(2)
+                \end{cases}
+                \]
+                Applying this function repeatedly, starting with the number \(1\) we receive \(1 \rightarrow 4 \rightarrow 2 \rightarrow 1 \rightarrow 4 \rightarrow \; ...\).
+                The conjecture is, that for any positive integer applying \(f\) repeatedly will eventually produce the number \(1\) and thus end up in this infinite cycle.
+                Here's a few things I learned during my time with this problem:
+            </p>
+            <ol>
+                <li>There is a close relationship between this problem and the so-called ruler function. In the graph it is drawn in red.</li>
+                <li>Expanding on this, it's worthwhile to not just consider the sequence of numbers, but also the divisibility by 2 when you add one to the number (drawn
+                in blue). Using this it's for example possible to proof the conjecture for the modified function with \(f(n) = 3n\) if \(n\) is odd.</li>
+                <li>Trying to solve an impossible problem is a great way to stumble upon all sorts of methods for solving other problems.</li>
+            </ol>
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz Conjecture Wikipedia Article</a></li>
+            </ul>
+            <hr class="seperator">
+            
+            <div class="spacer">
+                <h2>Flocking and Vectorfields</h2>
+                <p>21. December 2024</p>
+            </div>
+            
+            <div style="text-align: center;">
+                <img
+                class="imageborder"
+                alt="A lot of different forces are interacting to produce this diverse swarming behavior"
+                src="flocking.jpg"
+                style="max-width: 800px; max-height: 800px;">
+            </div>
+            <p>
+                This is a simple program illustrating flocking mechanisms and the effect of a vectorfield that changes over time. In the past I have done a lot of experimenting
+                with particle systems and vector fields and how particles interact with one another with different forces. This is largely due to Daniel Shiffmans excellent
+                <i>The Coding Train</i> (formerly The Coding Rainbow) Youtube-Channel in which he teaches programming in a very applied and diverse way by solving challenges.
+                Through this series I initially learned programming and can recommend it to everyone, even now, as a continuous source of interesting areas of programming.
+            </p>
+            <p>
+                In this flocking simulation 4 forces are at work
+            </p>
+            <ol>
+                <li>The vectorfield (indicated in grey) applies a force on each particle based on their absolute positions. This force changes continuously in time
+                and space.</li>
+                <li>The particles attract each other based on the inverse of their distance.</li>
+                <li>The particles repell each other based on the inverse of their distance squared.</li>
+                <li>The particles align their direction of movement relative to their neighbours.</li>
+            </ol>
+            <p>
+                With each of these fudamental forces comes at least one constant, used to scale their effect. This makes getting realistic flocking behavior, as seen in flocks
+                of birds for example, pretty difficult. As a rule of thumb I found that the attraction constant should be larger than the repelling constant. It is very
+                important that the repelling force falls of quicker than the attracting force since we want particles that are far apart to move towards each other to form
+                groups. Without a repelling force all particles would just bundle up into a single point and it would be uninteresting. This is almost exactly the same as the
+                balance of electrical and gravitational forces in particles.
+            </p>
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://thecodingtrain.com">The Coding Train</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Flocking">Flocking Wikipedia Article</a></li>
+            </ul>
+        </div>
+        
+        <!-- Footer -->
+        <!-- Header -->
+        <iframe
+                src="header.html"
+                width="100%"
+                height="100%" 
+                style="border:0; overflow:hidden;">
+        </iframe>
+    </body>
 </html>
