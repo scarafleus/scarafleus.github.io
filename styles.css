@@ -1,11 +1,11 @@
-h1 {font-family:Futura; color:white; text-align:center}
-h2 {font-family:Futura; font-size: 1.3em; color:white}
-h3 {font-family:Futura; color:white}
-p {font-family:Monaco; color:white}
-ol {font-family:Monaco; color:white}
-ul {font-family:Monaco; color:white}
-a {font-family:Monaco; color:#0062ff; text-decoration: none}
-table {font-family:Monaco; color:white}
+h1 {font-family:Futura, sans-serif; color:white; text-align:center}
+h2 {font-family:Futura, sans-serif; font-size: 1.3em; color:white}
+h3 {font-family:Futura, sans-serif; color:white}
+p {font-family:Monaco, monospace; color:white}
+ol {font-family:Monaco, monospace; color:white}
+ul {font-family:Monaco, monospace; color:white}
+a {font-family:Monaco, monospace; color:#0062ff; text-decoration: none}
+table {font-family:Monaco, monospace; color:white}
 img {width: 90%; height: auto}
 hr {border: 1px solid white; margin-bottom: 0; margin-top: 0}
 pre {
@@ -18,7 +18,7 @@ pre {
     border-radius: 5px; /* Optional: Rounded corners */
     overflow-x: auto; /* Adds scroll if the content is too wide */
 }
-code {font-family:Monaco; color: #f8f8f2}
+code {font-family:Monaco, monospace; color: #f8f8f2}
 .imageborder {
     width: 100%;
     height: auto;
@@ -26,4 +26,14 @@ code {font-family:Monaco; color: #f8f8f2}
     border-color: white;
 }
 .seperator {border: 0.5px solid white; margin-bottom: 2em; margin-top: 2em;}
-.spacer {justify-content: space-between; display: flex;}
+.spacer {justify-content: space-between; display: flex; margin: 1em 0;}
+div[style="margin:2em"] {margin: 1em; padding: 1em;}
+#header, #footer {background-color: #333; color: white; text-align: center; padding: 1em 0;}
+body {margin: 0; padding: 0; font-family: Monaco, monospace; line-height: 1.6; color: white;}
+
+@media (max-width: 768px) {
+    #header {font-size: 1.5em; padding: 0.5em 0;}
+    #footer {font-size: 0.8em; padding: 0.5em 0;}
+    .spacer h2 {font-size: 1.2em;}
+    div[style="margin:2em"] {margin: 1em 0.5em; padding: 0.5em;}
+}
