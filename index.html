@@ -86,7 +86,7 @@ Hannes Richter, started 9. April 2022
             <hr class="seperator">
             
             <div class="spacer">
-                <h2>Flocking and Vectorfields</h2>
+                <h2>Flocking and Vector-Fields</h2>
                 <p>21. December 2024</p>
             </div>
             
@@ -98,7 +98,7 @@ Hannes Richter, started 9. April 2022
                 style="max-width: 800px; max-height: 800px;">
             </div>
             <p>
-                This is a simple program illustrating flocking mechanisms and the effect of a vectorfield that changes over time. In the past I have done a lot of experimenting
+                This is a simple program illustrating flocking mechanisms and the effect of a vector field that changes over time. In the past I have done a lot of experimenting
                 with particle systems and vector fields and how particles interact with one another with different forces. This is largely due to Daniel Shiffmans excellent
                 <i>The Coding Train</i> (formerly The Coding Rainbow) Youtube-Channel in which he teaches programming in a very applied and diverse way by solving challenges.
                 Through this series I initially learned programming and can recommend it to everyone, even now, as a continuous source of interesting areas of programming.
@@ -107,14 +107,14 @@ Hannes Richter, started 9. April 2022
                 In this flocking simulation 4 forces are at work
             </p>
             <ol>
-                <li>The vectorfield (indicated in grey) applies a force on each particle based on their absolute positions. This force changes continuously in time
+                <li>The vector field (indicated in grey) applies a force on each particle based on their absolute positions. This force changes continuously in time
                 and space.</li>
                 <li>The particles attract each other based on the inverse of their distance.</li>
-                <li>The particles repell each other based on the inverse of their distance squared.</li>
+                <li>The particles repel each other based on the inverse of their distance squared.</li>
                 <li>The particles align their direction of movement relative to their neighbours.</li>
             </ol>
             <p>
-                With each of these fudamental forces comes at least one constant, used to scale their effect. This makes getting realistic flocking behavior, as seen in flocks
+                With each of these fundamental forces comes at least one constant, used to scale their effect. This makes getting realistic flocking behavior, as seen in flocks
                 of birds for example, pretty difficult. As a rule of thumb I found that the attraction constant should be larger than the repelling constant. It is very
                 important that the repelling force falls of quicker than the attracting force since we want particles that are far apart to move towards each other to form
                 groups. Without a repelling force all particles would just bundle up into a single point and it would be uninteresting. This is almost exactly the same as the
