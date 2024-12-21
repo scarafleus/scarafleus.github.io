@@ -136,7 +136,14 @@ code {font-family:Monaco; color: #f8f8f2}
         3n+1 &n \equiv 1 \quad \text{mod}(2)
       \end{cases}
     \]
-    Applying this function repeatedly, starting with the number \(1\) we receive \(1 \rightarrow 4 \rightarrow 2 \rightarrow 1 \rightarrow 4 \rightarrow \; ...\)
+    Applying this function repeatedly, starting with the number \(1\) we receive \(1 \rightarrow 4 \rightarrow 2 \rightarrow 1 \rightarrow 4 \rightarrow \; ...\).
+    The conjecture is, that for any positive integer applying \(f\) repeatedly will eventually produce the number \(1\) and thus end up in this infinite cycle.
+    Here's a few things I stumbled upon during my time with this problem:
+    <ol>
+      <li>There is a close relationship between this problem and the so-called ruler function. In the graph it is drawn in red.</li>
+      <li>Expanding on this, it's worthwhile to not just consider the sequence of numbers, but also the divisibility by 2 when you add one to the number. Using
+      this it's for example possible to proof the conjecture for the modified function with \(f(n) = 3n\) if \(n\) is odd.</li>
+    </ol>
   </p>
 
 
