@@ -172,6 +172,21 @@ code {font-family:Monaco; color: #f8f8f2}
     <i>The Coding Train</i> (formerly The Coding Rainbow) Youtube-Channel in which he teaches programming in a very applied and diverse way by solving challenges.
     Through this series I initially leearned programming and can recommend it to everyone, even now, as a continuous source of interesting areas of programming.
   </p>
+  <p>
+    In this flocking simulation 4 forces are at work
+    <ol>
+      <li>The vectorfield (indicated in grey) applies a force on each particle based on their absolute positions. This force changes continuously in time
+        and space.</li>
+      <li>The particles attract each other based on the inverse of their distance.</li>
+      <li>The particles repell each other based on the inverse of their distance squared.</li>
+      <li>The particles align their direction of movement relative to their neighbours.</li>
+    </ol>
+    With each of these fudamental forces comes at least one constant, used to scale their effect. This makes getting realistic flocking behavior, as seen in flocks
+    of birds for example, pretty difficult. As a rule of thumb I found that the attraction constant should be larger than the repelling constant. It is very
+    important that the repelling force falls of quicker than the attracting force since we want particles that are far apart to move towards each other to form
+    groups. Without a repelling force all particles would just bundle up into a single point and it would be uninteresting. This is almost exactly the same as the
+    balance of electrical and gravitational forces in particles.
+  </p>
 
   <!--
 
