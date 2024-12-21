@@ -7,30 +7,38 @@ Hannes Richter, started 9. April 2022
 -->
 
 <style>
-h1 {font-family:Futura; color:white; text-align: center}
-h2 {font-family:Futura; font-size: 1.3em; color:white}
-h3 {font-family:Futura; color:white}
-p {font-family:Monaco; color:white}
-ol {font-family:Monaco; color:white}
-ul {font-family:Monaco; color:white}
-a {font-family:Monaco; color:#0062ff; text-decoration: none}
-table {font-family:Monaco; color:white}
-img {width: 90%; height: auto}
-hr {border: 1px solid white; margin-bottom:0; margin-top:0}
+h1 {font-family:Futura; color:white; text-align: center;}
+h2 {font-family:Futura; font-size: 1.3em; color:white;}
+h3 {font-family:Futura; color:white;}
+p {font-family:Monaco; color:white;}
+ol {font-family:Monaco; color:white;}
+ul {font-family:Monaco; color:white;}
+a {font-family:Monaco; color:#0062ff; text-decoration: none;}
+table {font-family:Monaco; color:white;}
+img {width: 90%; height: auto;}
+hr {border: 1px solid white; margin-bottom: 0; margin-top: 0;}
 pre {
   display: inline-block;
-  margin: 0;
-  padding: 5px;
+  margin: 0; /* Removes extra space around the block */
+  padding: 5px; /* Adds a little inner spacing */
   text-align: center;
   vertical-align: middle;
   background-color: #101010;
   color: white;
   border-radius: 5px;
-  overflow-x: auto;
+  overflow-x: auto; /* Adds scrolling for long lines */
+  line-height: 1.2; /* Ensures tight spacing within the box */
 }
-.imageborder {max-width: 800px; max-height: 800px; width: 100%; height: auto; border-style:solid; border-color:white}
-.seperator {border: 0.5px solid white; margin-bottom:2em; margin-top:2em}
-.spacer {justify-content:space-between; display:flex}
+.imageborder {
+  max-width: 800px;
+  max-height: 800px;
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-color: white;
+}
+.seperator {border: 0.5px solid white; margin-bottom: 2em; margin-top: 2em;}
+.spacer {justify-content: space-between; display: flex;}
 </style>
 
 <head>
@@ -88,9 +96,11 @@ pre {
     I've dug up my external hard-drive and I want to display some of my old projects. Most of these, like this one, were made in the processing java environment.
     This first one is a simple tool that converts images into colored ASCII-art. The major design choice here was the character-palette. For this particular image I used
   </p>
-  <pre>
-    <code>&#123; ' ', '.', ',', ':', ';', '+', '*', '=', 'c', 'd', 'ä', '8', 'B', '&', '#', '@' &#125;</code>
-  </pre>
+  <div style="text-align: center;">
+    <pre>
+      <code>&#123; ' ', '.', ',', ':', ';', '+', '*', '=', 'c', 'd', 'ä', '8', 'B', '&', '#', '@' &#125;</code>
+    </pre>
+  </div>
   <p>
     Other steps in the image processing like transforming the pixel-brightness value can be omitted by simply adjusting this palette. It is possible and perhaps even
     a good idea to have spaces or multiple entries of the same character in your palette. The only other thing to note here, is that you probably want to adjust the color brightness
