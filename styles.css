@@ -71,6 +71,7 @@ figcaption {
     .spacer h2 {font-size: 1.2em;}
     div[style="margin:2em"] {margin: 1em 0.5em; padding: 0.5em;}
     .equations-container {
+        flex-direction: column; /* Stack equations vertically on small screens */
         gap: 1em; /* Reduce spacing between equations on small screens */
     }
     .equations-container div {
