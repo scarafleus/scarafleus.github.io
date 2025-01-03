@@ -35,7 +35,11 @@ div[style="margin:2em"] {margin: 1em; padding: 1em;}
 body {margin: 0; padding: 0; font-family: Monaco, monospace; line-height: 1.6; color: white;}
 
 .equations-container {display: flex; justify-content: center; align-items: center; gap: 6em; margin: 2em 0;}
-.equations-container div {text-align: center;}
+.equations-container div {
+    max-width: 100%;
+    overflow-x: auto; /* Adds horizontal scrolling for very wide equations */
+    text-align: center; /* Centers equations within their container */
+}
 figure {
     margin: 0 0 1em;
     text-align: center;
@@ -66,4 +70,10 @@ figcaption {
     #footer {font-size: 0.8em; padding: 0.5em 0;}
     .spacer h2 {font-size: 1.2em;}
     div[style="margin:2em"] {margin: 1em 0.5em; padding: 0.5em;}
+    .equations-container {
+        gap: 1em; /* Reduce spacing between equations on small screens */
+    }
+    .equations-container div {
+        font-size: 0.9em; /* Optionally reduce font size for better fit */
+    }
 }
