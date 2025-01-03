@@ -34,6 +34,33 @@ div[style="margin:2em"] {margin: 1em; padding: 1em;}
 #header, #footer {background-color: #000; color: white; text-align: center; padding: 1em 0;}
 body {margin: 0; padding: 0; font-family: Monaco, monospace; line-height: 1.6; color: white;}
 
+.equations-container {display: flex; justify-content: center; align-items: center; gap: 6em; margin: 2em 0;}
+.equations-container div {text-align: center;}
+figure {
+    margin: 0 0 1em;
+    text-align: center;
+    display: inline-flex; /* Ensures the image and caption are treated as a single block */
+    flex-direction: column; /* Stack image and caption vertically */
+    align-items: center;
+    vertical-align: top;   /* Align figures vertically to the top */
+}
+figcaption {
+    word-wrap: break-word;
+    white-space: normal;
+    color: white;
+    font-family: Monaco, monospace;
+    font-size: 0.9em;
+    margin-top: 5px; /* Spacing between image and caption */
+    max-width: 100%;
+}
+.image-container {
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the entire row of images */
+    gap: 10px; /* Space between images */
+    flex-wrap: wrap; /* Wrap to the next row if the screen is too narrow */
+}
+
 @media (max-width: 768px) {
     #header {font-size: 1.5em; padding: 0.5em 0;}
     #footer {font-size: 0.8em; padding: 0.5em 0;}

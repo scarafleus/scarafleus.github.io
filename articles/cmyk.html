@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    
+    <body>
+        <div class="spacer">
+            <h2>CMYK and RGB Conversion</h2>
+            <p>21. December 2024</p>
+        </div>
+        <div class="image-container">
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/cyan.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption>Cyan channel</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/magenta.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption>Magenta channel</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/yellow.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption>Yellow channel</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/key.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption>Key channel</figcaption>
+            </figure>
+        </div>
+        <p>
+            This is a brief exploration of color spaces. Inspired by a screen print at my parents home with offset
+            colored areas I wanted to replicate a similar effect and print an image by printing single colors successively
+            onto the same paper using a desktop printer. I wrote a quick processing sketch that loads an image and can
+            perform pixelwise operations on it. There is only one problem, the colors are RGB-colors. The RGB-colorspace
+            is additive with black being the default to which a red, green and blue component is added. Mixing all colors
+            results in white. The printer uses a subtractive colorspace on the other hand. The page starts out white and
+            regions of this are blotted out by cyan, magenta, yellow and black dots of ink. Mixing everything results in
+            black. Luckily, we can easily convert between these spaces:
+        </p>
+        <div class="equations-container">
+            <div>
+                <p>
+                    \[ \begin{align}
+                    K &= 1 - \text{max}(\frac{R}{255}, \frac{G}{255}, \frac{B}{255}) \\
+                    C &= \frac{1 - \frac{R}{255} - K}{1 - K} \\
+                    M &= \frac{1 - \frac{G}{255} - K}{1 - K} \\
+                    Y &= \frac{1 - \frac{B}{255} - K}{1 - K}
+                    \end{align} \]
+                </p>
+            </div>
+            <div>
+                <p>
+                    \[ \begin{align}
+                    R &= 255 \cdot (1-C) \cdot (1-K) \\
+                    G &= 255 \cdot (1-M) \cdot (1-K) \\
+                    B &= 255 \cdot (1-Y) \cdot (1-K)
+                    \end{align} \]
+                </p>
+            </div>
+        </div>
+        <p>
+            Note that the CMYK values are between \(0\) and \(1\) while the RGB values are between \(0\) and \(255\).
+            The K channel is black and is called K for historical reasons. The key plate contained the most detail in
+            traditional printing, this was usually colored black. Hence, black is now denoted K.
+            Now it is easy to isolate the color channels of the image. we can just set every CMYK value of the color to
+            \(0\) except for one, convert the color back to RGB and display it. I have used this to print an image in
+            multiple steps, one color-channel at a time, and it has produced a result almost exactly like printing the
+            image in one go.
+        </p>
+        <p>
+            We can now have some fun with these values and experiment a bit. The original image and the code used can be
+            found in the references.
+        </p>
+        <div class="image-container">
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/invc.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">Inverted cyan channel</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/invk.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">Inverted key channel</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/invcym.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">Inverted cyan, magenta and yellow channel</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/invcymk.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">Inverted all channels</figcaption>
+            </figure>
+        </div>
+        <div class="image-container">
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/rot_channels.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">Rotating color channels</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/k2.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">\(K = K^2\)</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/intense_k.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">\(K = 1 - (1 - K)^2\)</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/really_intense_k.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">Multiple iterations of \(K = K^2\) and \(K = 1 - (1 - K)^2\)</figcaption>
+            </figure>
+        </div>
+        <div class="image-container">
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/sin_freq_half.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">\(\sin\) function with period \(\frac{\pi}{2}\)</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/sin_freq_1.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">\(\sin\) function with period \(2\pi\)</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/sin_freq_3.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">\(\sin\) function with period \(6\pi\)</figcaption>
+            </figure>
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/cmyk/sin_freq_10.png"
+                        style="max-width: 305px; max-height: 250px;">
+                <figcaption style="max-width: 305px">\(\sin\) function with period \(20\pi\)</figcaption>
+            </figure>
+        </div>
+        <p>
+            I encourage you to play around with the values yourself and see what you can come up with. This is an easy
+            way to create individual and interesting christmas-cards for example.
+        </p>
+
+        <h3>References</h3>
+        <ul>
+            <li><a href="https://www.rapidtables.com/convert/color/cmyk-to-rgb.html">Conversion formulas and calculator</a></li>
+            <li><a href="https://github.com/scarafleus/CMYK">Processing code on GitHub</a></li>
+            <li><a href="https://pixabay.com/photos/speckled-wood-butterfly-leaf-insect-430203/">Original butterfly image</a></li>
+        </ul>
+    </body>
+</html>

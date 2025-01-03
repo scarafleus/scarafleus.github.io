@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    
+    <body>
+        <div class="spacer">
+            <h2>ASCII art</h2>
+            <p>21. December 2024</p>
+        </div>
+        <div class="image-container">
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/ascii_butterfly.jpg"
+                        style="max-width: 800px; max-height: 800px;">
+                <figcaption style="max-width: 800px">ASCII art of the quantum butterfly</figcaption>
+            </figure>
+        </div>
+        <p>
+            I've dug up my external hard-drive and I want to display some of my old projects. Most of these, like this one, were made in the processing java environment.
+            This first one is a simple tool that converts images into colored ASCII-art. The major design choice here was the character-palette. For this particular image I used
+        </p>
+        <div style="text-align: center;">
+            <pre><code>&#123; ' ', '.', ',', ':', ';', '+', '*', '=', 'c', 'd', 'ä', '8', 'B', '&', '#', '@' &#125;</code></pre>
+        </div>
+        <p>
+            Other steps in the image processing like transforming the pixel-brightness value can be omitted by simply adjusting this palette. It is possible and perhaps even
+            a good idea to have spaces or multiple entries of the same character in your palette. The only other thing to note here, is that you probably want to adjust the color brightness
+            since the brightness is already beeing regulated by the character we are using. I have simply set the brightness of each color to the maximum by multiplying the rgb-values
+            such that the biggest one became 255.
+        </p>
+        
+        <h3>References</h3>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/ASCII">ASCII Wiki</a></li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <div class="spacer">
+            <h2>The Collatz Conjecture</h2>
+            <p>21. December 2024</p>
+        </div>
+
+        <div class="image-container">
+            <figure>
+                <img
+                        class="imageborder"
+                        src="images/collatz_graph.jpg"
+                        style="max-width: 1680px; max-height: 1050px;">
+                <figcaption style="max-width: 1680px">A graph illustrating paths from various starting points of the
+                algorithm. Connections above the middle line (mountains) represent the operation \(\cdot3+1\), connections
+                    below (valleys) represent division by 2</figcaption>
+            </figure>
+        </div>
+        <p>
+            Like most mathematics students I have also spent a considerable amount of time on trying to solve the Collatz-conjecture. It is a fascinating problem and one I
+            would love to see the solution of within my lifetime. It defines a simple function mapping a positive integer to another positive integer. It goes like this:
+            \[
+            f(n) =
+            \begin{cases}
+            \frac{n}{2}\ &n \equiv 0 \quad \text{mod}(2) \\
+            3n+1 &n \equiv 1 \quad \text{mod}(2)
+            \end{cases}
+            \]
+            Applying this function repeatedly, starting with the number \(1\) we receive \(1 \rightarrow 4 \rightarrow 2 \rightarrow 1 \rightarrow 4 \rightarrow \; ...\).
+            The conjecture is, that for any positive integer applying \(f\) repeatedly will eventually produce the number \(1\) and thus end up in this infinite cycle.
+            Here's a few things I learned during my time with this problem:
+        </p>
+        <ol>
+            <li>There is a close relationship between this problem and the so-called ruler function. In the graph it is drawn in red.</li>
+            <li>Expanding on this, it's worthwhile to not just consider the sequence of numbers, but also the divisibility by 2 when you add one to the number (drawn
+                in blue). Using this it's for example possible to proof the conjecture for the modified function with \(f(n) = 3n\) if \(n\) is odd.</li>
+            <li>Trying to solve an impossible problem is a great way to stumble upon all sorts of methods for solving other problems.</li>
+        </ol>
+        <h3>References</h3>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz Conjecture Wikipedia Article</a></li>
+        </ul>
+    </body>
+</html>

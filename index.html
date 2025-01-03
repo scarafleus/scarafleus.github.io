@@ -5,182 +5,44 @@ Hannes Richter, started 9. April 2022
 
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Import a script to display LaTeX code. -->
-    <script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-    
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
         <title>The Quantum Butterfly</title>
         <link rel="stylesheet" href="styles.css"/>
         <script src="include.js" defer></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+                },
+                svg: {
+                    fontCache: 'global'
+                }
+            };
+        </script>
+        <!-- Import MathJax -->
+        <script type="text/javascript" id="MathJax-script" async
+                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
     </head>
     
     <body style="background-color:black;">
         <div id="header"></div>
         
-        <!-- Content -->
+        <!-- All the articles -->
         <div style="margin:2em">
-            <div class="spacer">
-                <h2>ASCII art</h2>
-                <p>21. December 2024</p>
-            </div>
-            <div style="text-align: center;">
-                <img
-                class="imageborder"
-                alt="A quantum butterfly"
-                src="images/ascii_butterfly.jpg"
-                style="max-width: 800px; max-height: 800px;">
-            </div>
-            <p>
-                I've dug up my external hard-drive and I want to display some of my old projects. Most of these, like this one, were made in the processing java environment.
-                This first one is a simple tool that converts images into colored ASCII-art. The major design choice here was the character-palette. For this particular image I used
-            </p>
-            <div style="text-align: center;">
-                <pre><code>&#123; ' ', '.', ',', ':', ';', '+', '*', '=', 'c', 'd', 'ä', '8', 'B', '&', '#', '@' &#125;</code></pre>
-            </div>
-            <p>
-                Other steps in the image processing like transforming the pixel-brightness value can be omitted by simply adjusting this palette. It is possible and perhaps even
-                a good idea to have spaces or multiple entries of the same character in your palette. The only other thing to note here, is that you probably want to adjust the color brightness
-                since the brightness is already beeing regulated by the character we are using. I have simply set the brightness of each color to the maximum by multiplying the rgb-values
-                such that the biggest one became 255.
-            </p>
+            <div id="ascii"></div>
             <hr class="seperator">
-            
-            <div class="spacer">
-                <h2>The Collatz Conjecture</h2>
-                <p>21. December 2024</p>
-            </div>
-            <div style="text-align: center;">
-            <img
-                class="imageborder"
-                alt="A collatz-sequence graph"
-                src="images/collatz_graph.jpg"
-                style="max-width: 1680px; max-height: 1050px;">
-            </div>
-            <p>
-                Like most mathematics students I have also spent a considerable amount of time on trying to solve the Collatz-conjecture. It is a fascinating problem and one I
-                would love to see the solution of within my lifetime. It defines a simple function mapping a positive integer to another positive integer. It goes like this:
-                \[
-                f(n) =
-                \begin{cases}
-                \frac{n}{2}\ &n \equiv 0 \quad \text{mod}(2) \\
-                3n+1 &n \equiv 1 \quad \text{mod}(2)
-                \end{cases}
-                \]
-                Applying this function repeatedly, starting with the number \(1\) we receive \(1 \rightarrow 4 \rightarrow 2 \rightarrow 1 \rightarrow 4 \rightarrow \; ...\).
-                The conjecture is, that for any positive integer applying \(f\) repeatedly will eventually produce the number \(1\) and thus end up in this infinite cycle.
-                Here's a few things I learned during my time with this problem:
-            </p>
-            <ol>
-                <li>There is a close relationship between this problem and the so-called ruler function. In the graph it is drawn in red.</li>
-                <li>Expanding on this, it's worthwhile to not just consider the sequence of numbers, but also the divisibility by 2 when you add one to the number (drawn
-                in blue). Using this it's for example possible to proof the conjecture for the modified function with \(f(n) = 3n\) if \(n\) is odd.</li>
-                <li>Trying to solve an impossible problem is a great way to stumble upon all sorts of methods for solving other problems.</li>
-            </ol>
-            <h3>References</h3>
-            <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz Conjecture Wikipedia Article</a></li>
-            </ul>
+            <div id="collatz"></div>
             <hr class="seperator">
-            
-            <div class="spacer">
-                <h2>Flocking and Vector-Fields</h2>
-                <p>21. December 2024</p>
-            </div>
-            <div style="text-align: center;">
-                <img
-                class="imageborder"
-                alt="A lot of different forces are interacting to produce this diverse swarming behavior"
-                src="images/flocking.jpg"
-                style="max-width: 800px; max-height: 800px;">
-            </div>
-            <p>
-                This is a simple program illustrating flocking mechanisms and the effect of a vector field that changes over time. In the past I have done a lot of experimenting
-                with particle systems and vector fields and how particles interact with one another with different forces. This is largely due to Daniel Shiffmans excellent
-                <i>The Coding Train</i> (formerly The Coding Rainbow) Youtube-Channel in which he teaches programming in a very applied and diverse way by solving challenges.
-                Through this series I initially learned programming and can recommend it to everyone, even now, as a continuous source of interesting areas of programming.
-            </p>
-            <p>
-                In this flocking simulation 4 forces are at work
-            </p>
-            <ol>
-                <li>The vector field (indicated in grey) applies a force on each particle based on their absolute positions. This force changes continuously in time
-                and space.</li>
-                <li>The particles attract each other based on the inverse of their distance.</li>
-                <li>The particles repel each other based on the inverse of their distance squared.</li>
-                <li>The particles align their direction of movement relative to their neighbours.</li>
-            </ol>
-            <p>
-                With each of these fundamental forces comes at least one constant, used to scale their effect. This makes getting realistic flocking behavior, as seen in flocks
-                of birds for example, pretty difficult. As a rule of thumb I found that the attraction constant should be larger than the repelling constant. It is very
-                important that the repelling force falls of quicker than the attracting force since we want particles that are far apart to move towards each other to form
-                groups. Without a repelling force all particles would just bundle up into a single point and it would be uninteresting. This is almost exactly the same as the
-                balance of electrical and gravitational forces in particles.
-            </p>
-            <div style="text-align: center;">
-                <img
-                    class="imageborder"
-                    alt="No flocking-behaviour, just forces from the vector field"
-                    src="images/vectorfield.jpg"
-                    style="max-width: 800px; max-height: 800px;">
-            </div>
-            <p>
-                An image of the particles being moved by the vector field without any flocking forces being active. This
-                can create stunning imagery if done right and I hope I get to showcase this project soon.
-            </p>
-            <h3>References</h3>
-            <ul>
-                <li><a href="https://thecodingtrain.com">The Coding Train</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Flocking">Flocking Wikipedia Article</a></li>
-            </ul>
-
-            <div class="spacer">
-                <h2>Analysing some hyper-parameters of a genetic algorithm</h2>
-                <p>21. December 2024</p>
-            </div>
-            <div style="text-align: center;">
-                <img
-                    class="imageborder"
-                    alt="TODO"
-                    src="images/genetic/data1.png"
-                    style="max-width: 585px; max-height: 535px;">
-                <img
-                    class="imageborder"
-                    alt="TODO"
-                    src="images/genetic/data2.png"
-                    style="max-width: 585px; max-height: 535px;">
-            </div>
-            <div style="text-align: center;">
-                <img
-                    class="imageborder"
-                    alt="TODO"
-                    src="images/genetic/data3.png"
-                    style="max-width: 585px; max-height: 535px;">
-                <img
-                    class="imageborder"
-                    alt="TODO"
-                    src="images/genetic/data4.png"
-                    style="max-width: 585px; max-height: 535px;">
-            </div>
-            <div style="text-align: center;">
-                <img
-                    class="imageborder"
-                    alt="TODO"
-                    src="images/genetic/data5.png"
-                    style="max-width: 585px; max-height: 535px;">
-                <img
-                    class="imageborder"
-                    alt="TODO"
-                    src="images/genetic/data6.png"
-                    style="max-width: 585px; max-height: 535px;">
-            </div>
-            <p style="text-align: center">
-                🚧 Under Construction 🚧
-            </p>
+            <div id="flocking"></div>
+            <hr class="seperator">
+            <div id="hyper parameters"></div>
+            <hr class="seperator">
+            <div id="cmyk"></div>
         </div>
-
+        
         <div id="footer"></div>
     </body>
 </html>
